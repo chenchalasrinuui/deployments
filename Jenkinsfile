@@ -1,14 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        FTP_HOST = '148.72.90.37'
-        FTP_USER = 'malladimurali'
-        FTP_PASS = 'Srinu123$'
-        FTP_TARGET_DIR = '/stage.uijavakit.com'  // Adjust according to GoDaddy hosting
-        LOCAL_BUILD_PATH = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\godaddy\\dist'
-    }
-
     stages {
         stage('Install Dependencies') {
             steps {
