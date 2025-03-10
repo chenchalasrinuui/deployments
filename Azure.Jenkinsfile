@@ -27,7 +27,7 @@ pipeline {
                bat 'powershell -command "Compress-Archive -Path MyReactApp\\* -DestinationPath MyReactApp.zip'
                bat "rmdir /S /Q MyReactApp"
                bat "az login --service-principal -u $AZURE_SP_USER -p $AZURE_SP_PASSWORD --tenant $AZURE_TENANT_ID"
-               bat "az staticwebapp deploy --resource-group web-deployment --name VTSReact --src-path C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\azure\\MyReactApp.zip"
+               bat "az webapp deploy --resource-group web-deployment --name ReactVTS --src-path C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\azure\\MyReactApp.zip"
                bat "del /F /Q MyReactApp.zip"
               }
             }
